@@ -131,6 +131,9 @@ def bogoliubov_transform(
 
 
 def _is_spin_block_diagonal(matrix) -> bool:
+    if matrix.shape != matrix.shape[1]:
+        return False
+
     n = matrix.shape[0]
     if n % 2:
         return False
